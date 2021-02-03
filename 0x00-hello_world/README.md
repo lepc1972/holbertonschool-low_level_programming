@@ -1,3 +1,3 @@
-# STARTING WITH C#
+#...c...#
 
-Here some important basics about C
+The basics of c
