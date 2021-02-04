@@ -1,9 +1,10 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * main - in this code you can view la combination de los first 900 numbers
  * triple
- * Return: Always 0 (Sucess)
+ *
+ * 
  */
 int main(void)
 {
@@ -30,4 +31,3 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}
