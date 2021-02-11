@@ -9,7 +9,6 @@ int _isdigit(int c)
 {
 	int i;
 
-	i = 48;
 
 	for (i = 0; i <= 57; i++)
 	{
