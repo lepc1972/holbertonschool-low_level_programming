@@ -1,24 +1,24 @@
 #include "holberton.h"
 /**
- * _isdigit - Check if is a digit
+ * _isdigit - Checked if a character is a digit character
  * @c: Value in ascii to be cheke
  * Return: (1) if c is a digit (0) otherwise
  */
 
 int _isdigit(int c)
 {
-	int i;
+	int digit, i;
 
-
-	for (i = 0; i <= 57; i++)
+	i = 48;
+	while (i <= 57)
 	{
-		if (c >= 48 && c <= 57)
+		if (c == i)
 		{
-			return (1);
+			digit = 1;
+			break;
 		}
-		else
-		{
-			return (0);
-		}
+		digit = 0;
+		i++;
 	}
+	return (digit);
 }
