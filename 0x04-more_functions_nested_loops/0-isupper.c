@@ -7,23 +7,18 @@
 
 int _isupper(int c)
 {
-
-	int i;
+	int upper, i;
 
 	i = 65;
-
-	for (i = 0; i <= 90; i++)
+	while (i <= 90)
+	{
+		if (c == i)
 		{
-		if (c >= 65 && c <= 90)
-		{
-			return (1);
+			upper = 1;
+			break;
 		}
-		else
-		{
-			return (0);
-		}
+		upper = 0;
+		i++;
 	}
-
-
+	return (upper);
 }
-
