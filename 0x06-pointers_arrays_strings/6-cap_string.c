@@ -1,41 +1,53 @@
 #include "holberton.h"
+
 /**
- * cap_string - cap all words.
- * @a: char to capitalizes
- * Return: char*
+ * lower_comp - checks input for lowercase
+ * @n: value
+ *
+ * Return: whether it is or not
  */
-
-char *cap_string(char *a)
+int lower_comp(int n)
 {
-	int i = 0, j = 0;
+	int answer = 0, i;
+	char lower[] = "abcdefghijklmnopqrstuvwxyz";
 
-	while (a[j])
-		j++;
+	for (i = 0; lower[i] != '\0'; i++)
+		if (n == lower[i])
+			answer = 1;
+	return (answer);
+}
 
-	if (j > 0)
-	{
-		if (a[0] >= 97 && a[0] <= 122)
-			*(a + i + 1) = *(a + i + 1) - 32;
-		else
-			a[i + 1] = a[i + 1];
+/**
+ * seperator_comp - checks input for seperator character
+ * @n: value
+ *
+ * Return: whether it is or not
+ */
+int seperator_comp(int n)
+{
+	int answer = 0, i;
+	char seperator[] = "' ''\t''\n',;.!?\"(){}";
 
-		while (a[i])
-		{
-			if (a[i] == ',' || a[i] == ';' || a[i] == '.' ||
-					a[i] == '!' || a[i] == '?' || a[i] == '"' ||
-					a[i] == '(' || a[i] == ')' || a[i] == '{' ||
-					a[i] == '}' || a[i] == 32 || a[i] == 9 ||
-					a[i] == '\n')
-			{
-				if (a[i + 1] >= 97  && a[i + 1] <= 122)
-					*(a + i + 1) = *(a + i + 1) - 32;
-				else
-					a[i + 1] = a[i + 1];
-			}
+	for (i = 0; seperator[i] != '\0'; i++)
+		if (n == seperator[i])
+			answer = 1;
+	return (answer);
+}
 
-			i++;
-		}
-	}
+/**
+ * cap_string - capitilizes all words of string
+ * @s: string
+ *
+ * Return: string capitilized
+ */
+char *cap_string(char *s)
+{
+	int i;
 
-	return (a);
+	if (lower_comp(s[0]) == 1)
+		s[0] -= 32;
+	for (i = 0; s[i] != '\0'; i++)
+		if (seperator_comp(s[i - 1]) == 1 && lower_comp(s[i]) == 1)
+			s[i] -= 32;
+	return (s);
 }
