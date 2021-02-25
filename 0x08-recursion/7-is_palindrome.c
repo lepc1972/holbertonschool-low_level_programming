@@ -1,49 +1,56 @@
 #include "holberton.h"
+
 /**
- * _strlen_recursion - string lenght
- * @s: string to print recursively
- * Return: void
- */
+ * _strlen_recursion - return string length
+ * @s: string
+ * Description: find string length using recursion
+ * Return: string length
+ **/
+
 int _strlen_recursion(char *s)
 {
-	int lenght = 0;
+	if (s[0] == '\0')
+		return (0);
 
-	if (*s == '\0')
+	if (s[1] == '\0')
 	{
-		return (0);
-	}
-	lenght = 1 + _strlen_recursion((s + 1));
-	return (lenght);
-}
-
-/**
- * _palindrome - function that returns 1 if a string
- * is a palindrome and 0 if not.
- * @start: begin to string
- * @size: finish to string
- * @s: string to validate
- * Return: 1 if string is palindrome , 0 otherwise
- */
-int _palindrome(int start, int size, char *s)
-{
-	if (s[start] == s[size]  && start < size)
-		return ( _palindrome(start + 1, size - 1, s));
-	if (start <= size)
 		return (1);
+	}
 	else
-		return (0);
+	{
+		return (_strlen_recursion(&s[1]) + 1);
+	}
+
 }
 
 /**
- * is_palindrome - function that returns 1 if a string
- * is a palindrome and 0 if not.
- * @s: string to validate
- * Return: 1 if string is palindrome , 0 otherwise
- */
+ * pd - check if string is a palindrome
+ * @s: string to check
+ * @n: size of string -1
+ * @i: counter through string
+ * Description: determins if string is a palindrome
+ * Return: 1 if palindrome, 0 if not
+ **/
+
+int pd(char *s, int n, int i)
+{
+	if (n <= i)
+		return (1);
+
+	if (s[i] != s[n])
+		return (0);
+
+	return (pd(s, n - 1, i + 1));
+}
+
+/**
+ * is_palindrome - checks if string is a palindrome
+ * @s: string to check
+ * Description: determins if string is a palindrome
+ * Return: 1 if palindrome, 0 if not
+ **/
+
 int is_palindrome(char *s)
 {
-	int lenght = 0;
-
-	lenght = _strlen_recursion(s);
-	return (_palindrome(0, lenght - 1, s));
+	return (pd(s, _strlen_recursion(s) - 1, 0));
 }
