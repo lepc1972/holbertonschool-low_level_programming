@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- *new_dog - new dog 
- *@name: pointer to dog´s name
+ *new_dog - new user dog
+ *@name: pointer to name of dog
  *@age: variable with dog´s age
  *@owner: pointer to owner´s name
  *Return: new dog
