@@ -19,7 +19,7 @@ va_list ap;
 
 va_start(ap, n);
 
-int i, sum = 0;
+int unsigned i, sum = 0;
 
 for (i = 0; i < n; i++)
 {
