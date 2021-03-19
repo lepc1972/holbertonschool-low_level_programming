@@ -1,17 +1,19 @@
-global main
+ SECTION .data
+msg:      db "Hello, Holberton,", 0
+fmt:      db "%s", 10, 0
 
-        section .text
+        SECTION .text
+        extern printf
+        global main
+main:
+
+        mov esi, msg
+        mov edi, fmt
+        mov eax, 0
 
 
-main:   mov eax, 0x04
-        mov ebx, 1
-        mov ecx, message
-        mov edx, message_length
-        int 0x80
-        mov eax, 0x01
+        call printf
+
         mov ebx, 0
+        mov eax, 1
         int 0x80
-
-        section .data
-        message: db "Hello, Holberton", 0xA
-        message_length equ $-message
