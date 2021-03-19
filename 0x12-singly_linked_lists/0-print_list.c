@@ -30,7 +30,7 @@ printf("(nil)\n");
 else
 {
 printf("[%d] ", act->len);
-printf("[%s\n]", act->str);
+printf("%s\n", act->str);
 }
 act = act->next;
 
