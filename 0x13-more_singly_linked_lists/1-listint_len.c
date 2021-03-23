@@ -7,7 +7,7 @@
  */
 size_t listint_len(const listint_t *h)
 {
-int i;
+size_t i;
 
 if (h == NULL)
 {
