@@ -10,6 +10,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int clear_bit(unsigned long int *n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 int _putchar(char c);
